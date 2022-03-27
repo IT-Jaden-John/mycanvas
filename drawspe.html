@@ -33,7 +33,7 @@
 		       startDistanceX = e.touches[0].screenX
 		       startDistanceY = e.touches[0].screenY
 		   })
-		   oV.addEventListener("touchend", (e) => {
+		   oV.addEventListener("touchmove", (e) => {
 		       endTime = new Date().getTime()
 		       endDistanceX = e.changedTouches[0].screenX
 		       endDistanceY = e.changedTouches[0].screenY
