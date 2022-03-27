@@ -41,8 +41,8 @@
 		       moveDistanceX = startDistanceX - endDistanceX
 		       moveDistanceY = startDistanceY - endDistanceY
 		       gd.beginPath();//清除之前所有的路径
-			   lastX=ev.offsetX;
-			   lastY=ev.offsetY;
+			lastX=ev.offsetX;
+			lastY=ev.offsetY;
 		       gd.moveTo(lastX,lastY);
 		       gd.lineTo(ev.offsetX,ev.offsetY);
 		       lastX=ev.offsetX;
