@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>还差一步</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script>
+			var a=0;
+		    function test(name) {
+				if(name=="叶子路"){
+					a=a+1;
+				}
+			}
+			function test2(year) {
+				if(year=="2010"){
+					a=a+1;
+				}
+			}
+			function test3(month) {
+				if(month=="6"){
+					a=a+1;
+				}
+				if(a==3){
+					window.location.href="drawspe.html";
+				}else{
+					window.location.href="draw.html";
+				}
+			}
+		</script>
+
+	</head>
+	<body>
+		<h1 align="center">
+			还差一步
+		</h1>
+		<h5 align="center">
+			让我们了解一下您的信息（我们不会储存任何数据，请放心）
+		</h5>
+		<div>
+			<div class="input-group mb-3">
+			    <input type="text" id="name" class="form-control" placeholder="您的姓名" name="username">
+				<a>
+					<button type="button" class="btn btn-primary" onclick="test(document.getElementById('name').value)">确定</button>
+				</a>
+			</div>
+			<div class="input-group mb-3">
+			    <input type="text" class="form-control" id="year" placeholder="出生年份" name="username">
+				<a>
+					<button type="button" class="btn btn-primary" onclick="test2(document.getElementById('year').value)">确定</button>
+				</a>
+			</div>
+			<div class="input-group mb-3">
+			    <input type="text" class="form-control" id="month" placeholder="出生月份"  name="username">
+				<a>
+					<button type="button" class="btn btn-primary" onclick="test3(document.getElementById('month').value)">确定</button>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>
