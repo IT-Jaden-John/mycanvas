@@ -1,7 +1,11 @@
     let canvas = document.getElementById('canvas');
     let ctx = canvas.getContext('2d');
-    let myColor = color16();
+    let Color = document.getElementById('color1');
     let move = true;
+	let myColor;
+	Color.onchange=function () {
+		myColor=this.value;
+	}
     // 设置线条的样式
     ctx.lineWidth = 3;
 
@@ -45,16 +49,16 @@
             ctx.moveTo(path.x,path.y);
         }
         ctx.lineTo(path.x,path.y);
-        ctx.strokeStyle = path.color;
+        ctx.strokeStyle =myColor;
         ctx.stroke();
     }
     //十六进制颜色随机
-    function color16(){
-        let r = PrefixInteger((Math.floor(Math.random()*256)).toString(16), 2);
-        let g = PrefixInteger(Math.floor(Math.random()*256).toString(16), 2);
-        let b = PrefixInteger(Math.floor(Math.random()*256).toString(16), 2);
-        return '#' + r + g + b;
-    }
+    //function color16(){
+        //let r = PrefixInteger((Math.floor(Math.random()*256)).toString(16), 2);
+        //let g = PrefixInteger(Math.floor(Math.random()*256).toString(16), 2);
+        //let b = PrefixInteger(Math.floor(Math.random()*256).toString(16), 2);
+        //return '#' + r + g + b;
+    //}
     // 前置补0
     function PrefixInteger(num, n) {
         return (Array(n).join(0) + num).slice(-n);
