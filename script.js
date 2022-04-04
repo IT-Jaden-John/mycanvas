@@ -2,10 +2,10 @@
     let ctx = canvas.getContext('2d');
     let Color = document.getElementById('color1');
     let move = true;
-	let myColor;
-	Color.onchange=function () {
-		myColor=this.value;
-	}
+    let myColor;
+    Color.onchange=function () {
+	myColor=this.value;
+    }
     // 设置线条的样式
     ctx.lineWidth = 3;
 
