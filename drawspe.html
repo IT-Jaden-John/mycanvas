@@ -2,101 +2,42 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>My Canvas-Hello!</title>
-		<style media="screen">
-			body {background:ghostwhite; text-align:center}
-			#v1 {background:white}
-		</style>
 		<script>
-		  window.onload=function () {
-		   let oV=document.getElementById('v1');
-		   let gd=oV.getContext('2d'); //图形上下文——绘图接口
-		   let oColor=document.getElementById('color1');
-
-		   let color;
-		   oColor.onchange=function () {
-			color=this.value;
-		   }
-
-		   let lastX,lastY;
-		   let startTime = '' // 触摸开始时间
-		   let startDistanceX = '' // 触摸开始X轴位置
-		   let startDistanceY = '' // 触摸开始Y轴位置
-		   let endTime = '' // 触摸结束时间
-		   let endDistanceX = '' // 触摸结束X轴位置
-		   let endDistanceY = '' // 触摸结束Y轴位置
-		   let moveTime = '' // 触摸时间
-		   let moveDistanceX = '' // 触摸移动X轴距离
-		   let moveDistanceY = '' // 触摸移动Y轴距离
-		   oV.addEventListener("touchstart", (e) => {
-		       startTime = new Date().getTime()
-		       startDistanceX = e.touches[0].screenX
-		       startDistanceY = e.touches[0].screenY
-		   })
-		   oV.addEventListener("touchmove", (e) => {
-		       endTime = new Date().getTime()
-		       endDistanceX = e.changedTouches[0].screenX
-		       endDistanceY = e.changedTouches[0].screenY
-		       moveTime = endTime - startTime
-		       moveDistanceX = startDistanceX - endDistanceX
-		       moveDistanceY = startDistanceY - endDistanceY
-		       gd.beginPath();//清除之前所有的路径
-		       lastX=ev.offsetX;
-		       lastY=ev.offsetY;
-		       gd.moveTo(lastX,lastY);
-		       gd.lineTo(ev.offsetX,ev.offsetY);
-		       lastX=ev.offsetX;
-		       lastY=ev.offsetY;
-		       gd.strokeStyle=color;//用获取到的颜色作为绘制颜色
-		       gd.stroke();
-		   })
-		   
-
-		   oV.onmousedown=function (ev) {
-
-			lastX=ev.offsetX;
-			lastY=ev.offsetY;
-
-			oV.onmousemove=function (ev) {
-			 gd.beginPath();//清除之前所有的路径
-			 
-			 gd.moveTo(lastX,lastY);
-			 gd.lineTo(ev.offsetX,ev.offsetY);
-
-			 lastX=ev.offsetX;
-			 lastY=ev.offsetY;
-
-			 gd.strokeStyle=color;//用获取到的颜色作为绘制颜色
-			 gd.stroke();
-
-			}
-			oV.onmouseup=function () {
-			 oV.onmousemove=null;
-			 oV.onmouseup=null;
-			}
-			
-		   }
-
-		  }
-
-
-		</script>
-		<script>
+		    var a=0;
 			var date = new Date().getDate();
 			var month = new Date().getMonth();
 			alert("欢迎！");
 			alert("这是我给你做的一个绘画网站！");
 			alert("我没有办法买一套手帐给你，所以搭建了比较简陋的这个网站，请你原谅我");
 			if(date==28){
-				if(month==4){
-					alert("生日快乐！");
-				}
+				a+=1;
+			}
+			if(month==3){
+				a+=1;
+			}
+			if(a==2){
+				alert("生日快乐！");
 			}
 		</script>
 	</head>
 	<body>
-		<input type="color" id="color1" /><br/>
-		<canvas id="v1" width="800" height="600">
-		</canvas>
+	<input type="color" id="color1" />
+	<div id="canvas_box">
+		<canvas width="2000" height="6000" id="canvas"></canvas>
+	</div>
+	<div id="msg">手机触屏滑动绘图试试看</div>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	// 提示消息显示
+	$(function(){
+		$("#msg").fadeIn().delay(1000).fadeOut();
+	})
+	</script>
+	<script src="script.js"></script>
+	
 	</body>
 </html>
