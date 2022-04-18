@@ -3,6 +3,13 @@
     let Color = document.getElementById('color1');
     let move = true;
     let myColor;
+    stop(){
+        var preMove=function(e){passive: false ;};
+        document.body.style.overflow='hidden';
+        document.addEventListener("touchmove",preMove,false);//禁止页面滑动
+    }
+
+
     Color.onchange=function () {
 	myColor=this.value;
     }
