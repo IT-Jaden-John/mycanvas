@@ -23,7 +23,7 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body style="overflow:hidden">
 	<input type="color" id="color1" />
 	<div id="canvas_box">
 		<canvas width="2000" height="6000" id="canvas"></canvas>
@@ -36,9 +36,7 @@
 	$(function(){
 		$("#msg").fadeIn().delay(1000).fadeOut();
 	})
-	document.body.addEventListener('touchmove', function(e){
-     		e.preventDefault();
-	 }, { passive: false });  //passive 参数不能省略，用来兼容ios和android
+	
 
 	</script>
 	<script src="script.js"></script>
