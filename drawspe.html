@@ -36,6 +36,10 @@
 	$(function(){
 		$("#msg").fadeIn().delay(1000).fadeOut();
 	})
+	document.body.addEventListener('touchmove', function(e){
+     		e.preventDefault();
+	 }, { passive: false });  //passive 参数不能省略，用来兼容ios和android
+
 	</script>
 	<script src="script.js"></script>
 	
