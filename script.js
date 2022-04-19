@@ -1,6 +1,7 @@
     let canvas = document.getElementById('canvas');
     let ctx = canvas.getContext('2d');
     let Color = document.getElementById('color1');
+    let erase=document.getElementById('era');
     let move = true;
     let myColor;
     
@@ -47,6 +48,7 @@
     }
     // 绘画操作
     function drawing(path){
+	alert(myColor);
         if(path.move){
             ctx.beginPath();
             ctx.moveTo(path.x,path.y);
