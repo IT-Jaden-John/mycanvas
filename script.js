@@ -6,9 +6,14 @@
     let myColor;
     
 
-
+	erase.onclick=function(){
+		myColor="#ffffff";
+		ctx.lineWidth = 30;
+	}
     Color.onchange=function () {
 	myColor=this.value;
+	ctx.lineWidth = 3;
+	
     }
     // 设置线条的样式
     ctx.lineWidth = 3;
@@ -48,7 +53,7 @@
     }
     // 绘画操作
     function drawing(path){
-	alert(myColor);
+		//alert(myColor);
         if(path.move){
             ctx.beginPath();
             ctx.moveTo(path.x,path.y);
